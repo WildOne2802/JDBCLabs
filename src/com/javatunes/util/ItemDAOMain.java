@@ -10,9 +10,9 @@ public class ItemDAOMain {
         conn = DriverManager.getConnection("jdbc:derby://localhost:1527/JavaTunesDB");
         ItemDAO itemDAO = new ItemDAO(conn);
         mi =  itemDAO.searchById(1L);
-        mi.toString();
-        mi = itemDAO.searchById(100L);
-        mi.toString();
+        System.out.println(mi.toString());
+//        mi = itemDAO.searchById(100L);
+//        mi.toString();
 
 
     }
