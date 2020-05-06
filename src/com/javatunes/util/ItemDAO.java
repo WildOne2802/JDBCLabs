@@ -119,10 +119,18 @@ public class ItemDAO {
         // Use the following releaseDate value in the  prepared statement for setDate
         java.sql.Date releaseDate = new java.sql.Date(item.getReleaseDate().getTime());
         //-- set the ? parameters on the PreparedStatement --//
-
+        String sql = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION) VALUES ?, ?, ?, ?, ?, ?";
+        PreparedStatement stmt = m_conn.prepareStatement(sql);
+        stmt.setString(1, item.getTitle());
+        stmt.setString(2, item.getArtist());
+        stmt.setDate(3, releaseDate);
+        stmt.setBigDecimal(4, item.getListPrice());
+        stmt.setBigDecimal(5, item.getPrice());
+        stmt.setInt(6, 1);
 
         //-- execute the PreparedStatement - ignore the update count --//
-
+        System.out.println(stmt.executeUpdate());
+        m_conn.commit();
     }
 
 
