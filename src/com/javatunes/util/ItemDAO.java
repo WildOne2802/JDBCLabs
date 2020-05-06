@@ -94,14 +94,19 @@ public class ItemDAO {
         String wildcarded = "%" + keyword + "%";
 
         //-- set the ? parameters on the PreparedStatement --//
-
+        String sql = "SELECT * FROM GUEST.ITEM WHERE TITLE LIKE ?";
 
         //-- execute the PreparedStatement, get a ResultSet back --//
-
+        PreparedStatement pstmt = m_conn.prepareStatement(sql);
+        pstmt.setString(1, wildcarded);
+        ResultSet rs = pstmt.executeQuery();
 
         //-- iterate through the ResultSet, extracting data from each row and creating an ItemValue from it --//
         //-- add the ItemValue to the Collection via Collection's add method --//
-
+        while (rs.next()) {
+            result.add(new MusicItem(rs.getLong(1), rs.getString(2), rs.getString(3),
+                    rs.getDate(4), rs.getBigDecimal(5), rs.getBigDecimal(6)));
+        }
 
         // return the Collection
         return result;
