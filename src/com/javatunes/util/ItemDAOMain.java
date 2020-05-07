@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Collection;
 import java.util.Date;
 
@@ -28,13 +29,21 @@ public class ItemDAOMain {
         cmi = itemDAO.searchByKeyword("of");
         System.out.println(cmi.toString());
 
-//        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(2019, 9, 2),
+//        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(119, 9, 2),
 //                BigDecimal.valueOf(140.0), BigDecimal.valueOf(120.0));
 //        itemDAO.create(mi1);
 
         cmi = itemDAO.searchByKeyword("AUSLANDER");
         System.out.println(cmi.toString());
 
+//        String deleteSql = "DELETE FROM GUEST.ITEM WHERE TITLE = \'AUSLANDER\'";
+//        Statement stmt = conn.createStatement();
+//        stmt.executeUpdate(deleteSql);
+
+
+        itemDAO.showAll();
+        itemDAO.swap(1,2);
+        itemDAO.showAll();
         itemDAO.close();
 
     }

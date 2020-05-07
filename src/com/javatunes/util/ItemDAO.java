@@ -127,6 +127,27 @@ public class ItemDAO {
         m_conn.commit();
     }
 
+    public void swap(int idFirst, int idSecond) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        String sql = "UPDATE t1 SET t1.PRICE = t2.PRICE FROM GUEST.ITEM t1 INNER JOIN GUEST.ITEM t2 ON (t2.ID = ? AND t1.ID = ?) OR (t2.ID = ? AND t1.ID = ?)";
+        preparedStatement = m_conn.prepareStatement(sql);
+        preparedStatement.setInt(1, idFirst);
+        preparedStatement.setInt(2, idSecond);
+        preparedStatement.setInt(3, idSecond);
+        preparedStatement.setInt(4,idFirst);
+        preparedStatement.executeUpdate();
+        m_conn.commit();
+    }
+
+    public void showAll() throws SQLException{
+        String sql = "SELECT * FROM GUEST.ITEM";
+        Statement stmt = m_conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        while(rs.next()){
+            System.out.println(new MusicItem(rs.getLong(1), rs.getString(2), rs.getString(3),
+                    rs.getDate(4), rs.getBigDecimal(5), rs.getBigDecimal(6)).toString());
+        }
+}
 
     //// PreparedStatement and Update Labs ////
     public void close() {
@@ -144,3 +165,12 @@ public class ItemDAO {
         }
     }
 }
+
+// TODO:
+// еще как можно кроме коммита -
+// нужно ли вызывать коммит
+// что такое autocommit
+// update method
+// gets 2 id
+// swap price
+// atom
