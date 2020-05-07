@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d07d729e-c681-4aea-9300-0f249ec11fbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC Lab5/JDBCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC Lab5/JDBCTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC Lab5/com/javatunes/util/ItemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC Lab5/com/javatunes/util/ItemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC Lab5/com/javatunes/util/ItemDAOMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC Lab5/com/javatunes/util/ItemDAOMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" afterDir="false" />
     </list>
@@ -43,7 +46,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cmd" value="1" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="iml" value="1" />
           <entry key="java" value="15" />
           <entry key="txt" value="1" />
@@ -54,31 +57,31 @@
           <entry key="Cmd" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="15" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="21" />
-          <entry key="java" value="2604" />
-          <entry key="txt" value="85" />
+          <entry key="java" value="2692" />
+          <entry key="txt" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2604" />
-          <entry key="PLAIN_TEXT" value="106" />
+          <entry key="JAVA" value="2692" />
+          <entry key="PLAIN_TEXT" value="108" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1387">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="238">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,88 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/DBCapabilities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/JDBCUtilities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#3625#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/MusicItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
-              <folding>
-                <element signature="e#1861#1862#0" expanded="true" />
-                <element signature="e#1886#1887#0" expanded="true" />
-                <element signature="e#1918#1919#0" expanded="true" />
-                <element signature="e#1946#1947#0" expanded="true" />
-                <element signature="e#1979#1980#0" expanded="true" />
-                <element signature="e#2008#2009#0" expanded="true" />
-                <element signature="e#2044#2045#0" expanded="true" />
-                <element signature="e#2078#2079#0" expanded="true" />
-                <element signature="e#2118#2119#0" expanded="true" />
-                <element signature="e#2150#2151#0" expanded="true" />
-                <element signature="e#2186#2187#0" expanded="true" />
-                <element signature="e#2214#2215#0" expanded="true" />
-                <element signature="e#2507#2508#0" expanded="true" />
-                <element signature="e#2532#2533#0" expanded="true" />
-                <element signature="e#2576#2577#0" expanded="true" />
-                <element signature="e#2607#2608#0" expanded="true" />
-                <element signature="e#2653#2654#0" expanded="true" />
-                <element signature="e#2686#2687#0" expanded="true" />
-                <element signature="e#2740#2741#0" expanded="true" />
-                <element signature="e#2783#2784#0" expanded="true" />
-                <element signature="e#2839#2840#0" expanded="true" />
-                <element signature="e#2878#2879#0" expanded="true" />
-                <element signature="e#2926#2927#0" expanded="true" />
-                <element signature="e#2957#2958#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JDBCOracle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JDBCTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="246">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,8 +120,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/javatunes/util/MusicItem.java" />
         <option value="$PROJECT_DIR$/src/JDBCTest.java" />
-        <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" />
+        <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" />
       </list>
     </option>
   </component>
@@ -227,32 +153,6 @@
             <path>
               <item name="JDBCLabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="JDBCLabs" type="462c0819:PsiDirectoryNode" />
-              <item name="LabSetup_JDBC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JDBCLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBCLabs" type="462c0819:PsiDirectoryNode" />
-              <item name="LabSetup_JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="Studentwork" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JDBCLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBCLabs" type="462c0819:PsiDirectoryNode" />
-              <item name="LabSetup_JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="Studentwork" type="462c0819:PsiDirectoryNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JDBCLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBCLabs" type="462c0819:PsiDirectoryNode" />
-              <item name="LabSetup_JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="Studentwork" type="462c0819:PsiDirectoryNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="Derby" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JDBCLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBCLabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -272,7 +172,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588845519111" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588846598942" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/LabSetup_JDBC/Studentwork/JDBC/ojdbc6.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -370,7 +270,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588764097869</updated>
       <workItem from="1588764101234" duration="2429000" />
-      <workItem from="1588770707972" duration="17512000" />
+      <workItem from="1588770707972" duration="18571000" />
     </task>
     <task id="LOCAL-00001" summary="ITEMDAO">
       <created>1588791229234</created>
@@ -400,11 +300,18 @@
       <option name="project" value="LOCAL" />
       <updated>1588842040031</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ITEMDAO create method fixed">
+      <created>1588845610529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588845610529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19941000" />
+    <option name="totallyTimeSpent" value="21000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,7 +337,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32107496" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4526167" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.1145686" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
@@ -460,19 +367,8 @@
     <MESSAGE value="ITEMDAO parameterized request" />
     <MESSAGE value="ITEMDAO create method fix needed" />
     <MESSAGE value="ITEMDAO create method fix still needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="ITEMDAO create method fix still needed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java</url>
-          <line>117</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="ITEMDAO create method fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ITEMDAO create method fixed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/LabSetup_JDBC/Studentwork/JDBC/Derby/dbCreate.cmd">
@@ -498,6 +394,23 @@
     <entry file="file://$PROJECT_DIR$/JDBC Lab5.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/JDBCTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JDBCOracle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -515,26 +428,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JDBCTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JDBCOracle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/MusicItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
+        <state relative-caret-position="1343">
           <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
           <folding>
             <element signature="e#1861#1862#0" expanded="true" />
@@ -567,25 +463,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/DBCapabilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="527">
+          <caret line="40" column="52" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1387">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="246">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
+    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        <state relative-caret-position="238">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

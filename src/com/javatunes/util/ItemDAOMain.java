@@ -19,8 +19,8 @@ public class ItemDAOMain {
         mi = itemDAO.searchById(1L);
         System.out.println(mi.toString());
 
-        mi = itemDAO.searchById(100L);
-        System.out.println(mi.toString());
+//         mi = itemDAO.searchById(100L);
+//         System.out.println(mi.toString());
 
         Collection<MusicItem> cmi = itemDAO.searchByKeyword("Ray");
         System.out.println(cmi.toString());
