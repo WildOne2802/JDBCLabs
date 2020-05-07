@@ -3,7 +3,6 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import org.apache.derby.jdbc.ClientDriver;
 
 public class JDBCTest {
     public static void main(String[] args) {

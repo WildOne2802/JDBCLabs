@@ -19,31 +19,31 @@ public class ItemDAO {
 
     //// PreparedStatement Lab ////
     //-- declare the PreparedStatement for searchByKeyword --//
-
-
+    PreparedStatement pstmt = null;
     //// Update Lab ////
     //-- declare the PreparedStatement for create --//
-
+    PreparedStatement stmt = null;
 
     // constructor
-    public ItemDAO(Connection conn)
-            throws SQLException {
+    public ItemDAO(Connection conn) throws SQLException {
         // store the connection
         m_conn = conn;
 
         //// PreparedStatement Lab ////
         //-- define the ?-SQL for searchByKeyword --//
-
+        String sqlSearchByKey = "SELECT * FROM GUEST.ITEM WHERE TITLE LIKE ?";
 
         //-- prepare the ?-SQL with the DBMS and initialize the PreparedStatement --//
+        pstmt = m_conn.prepareStatement(sqlSearchByKey);
 
+        //TODO: FIX THE EXCEPTION
 
         //// Update Lab ////
         //-- define the ?-SQL for create --//
-
+        //String sqlCreate = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION) VALUES ?, ?, ?, ?, ?, ?";
 
         //-- prepare the ?-SQL with the DBMS and initialize the PreparedStatement --//
-
+        //stmt = m_conn.prepareStatement(sqlCreate);
     }
 
 
@@ -94,11 +94,9 @@ public class ItemDAO {
         String wildcarded = "%" + keyword + "%";
 
         //-- set the ? parameters on the PreparedStatement --//
-        String sql = "SELECT * FROM GUEST.ITEM WHERE TITLE LIKE ?";
+        pstmt.setString(1, wildcarded);
 
         //-- execute the PreparedStatement, get a ResultSet back --//
-        PreparedStatement pstmt = m_conn.prepareStatement(sql);
-        pstmt.setString(1, wildcarded);
         ResultSet rs = pstmt.executeQuery();
 
         //-- iterate through the ResultSet, extracting data from each row and creating an ItemValue from it --//
@@ -119,8 +117,6 @@ public class ItemDAO {
         // Use the following releaseDate value in the  prepared statement for setDate
         java.sql.Date releaseDate = new java.sql.Date(item.getReleaseDate().getTime());
         //-- set the ? parameters on the PreparedStatement --//
-        String sql = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION) VALUES ?, ?, ?, ?, ?, ?";
-        PreparedStatement stmt = m_conn.prepareStatement(sql);
         stmt.setString(1, item.getTitle());
         stmt.setString(2, item.getArtist());
         stmt.setDate(3, releaseDate);
@@ -136,23 +132,17 @@ public class ItemDAO {
 
     //// PreparedStatement and Update Labs ////
     public void close() {
-      /*
-      REMOVE this comment in PreparedStatement Lab
-      try
-      {
-         //// PreparedStatement Lab ////
-         //-- close the PreparedStatement for searchByKeyword --//
-         
-         
-         //// Update Lab ////
-         //-- close the PreparedStatement for create --//
-         
-      }
-      catch (SQLException sqle)
-      {
-         JDBCUtilities.printSQLException(sqle);
-      }
-      REMOVE this comment in the PreparedStatement Lab
-      */
+
+        try {
+            //// PreparedStatement Lab ////
+            //-- close the PreparedStatement for searchByKeyword --//
+            pstmt.close();
+
+            //// Update Lab ////
+            //-- close the PreparedStatement for create --//
+            stmt.close();
+        } catch (SQLException sqle) {
+            JDBCUtilities.printSQLException(sqle);
+        }
     }
 }

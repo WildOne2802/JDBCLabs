@@ -17,13 +17,14 @@ public class ItemDAOMain {
         System.out.println(mi.toString());
 //        mi = itemDAO.searchById(100L);
 //        mi.toString();
-        Collection<MusicItem> cmi = itemDAO.searchByKeyword("Gay");
+        Collection<MusicItem> cmi = itemDAO.searchByKeyword("Ray");
         System.out.println(cmi.toString());
         cmi = itemDAO.searchByKeyword("of");
         System.out.println(cmi.toString());
-
-        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(2019, 9, 2),
-                BigDecimal.valueOf(140.0), BigDecimal.valueOf(120.0));
-        itemDAO.create(mi1);
+        // TODO: FIX THE EXCEPTION
+//        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(2019, 9, 2),
+//                BigDecimal.valueOf(140.0), BigDecimal.valueOf(120.0));
+//        itemDAO.create(mi1);
+//        itemDAO.close();
     }
 }
