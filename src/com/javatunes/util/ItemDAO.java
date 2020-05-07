@@ -19,10 +19,10 @@ public class ItemDAO {
 
     //// PreparedStatement Lab ////
     //-- declare the PreparedStatement for searchByKeyword --//
-    PreparedStatement pstmt = null;
+    PreparedStatement pstmtSearchByKey = null;
     //// Update Lab ////
     //-- declare the PreparedStatement for create --//
-    PreparedStatement stmt = null;
+    PreparedStatement pstmtCreate = null;
 
     // constructor
     public ItemDAO(Connection conn) throws SQLException {
@@ -34,16 +34,14 @@ public class ItemDAO {
         String sqlSearchByKey = "SELECT * FROM GUEST.ITEM WHERE TITLE LIKE ?";
 
         //-- prepare the ?-SQL with the DBMS and initialize the PreparedStatement --//
-        pstmt = m_conn.prepareStatement(sqlSearchByKey);
-
-        //TODO: FIX THE EXCEPTION
+        pstmtSearchByKey = m_conn.prepareStatement(sqlSearchByKey);
 
         //// Update Lab ////
         //-- define the ?-SQL for create --//
-        //String sqlCreate = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION) VALUES ?, ?, ?, ?, ?, ?";
+        String sqlCreate = "INSERT INTO GUEST.ITEM (TITLE, ARTIST, RELEASEDATE, LISTPRICE, PRICE, VERSION) VALUES (?, ?, ?, ?, ?, ?)";
 
         //-- prepare the ?-SQL with the DBMS and initialize the PreparedStatement --//
-        //stmt = m_conn.prepareStatement(sqlCreate);
+        pstmtCreate = m_conn.prepareStatement(sqlCreate);
     }
 
 
@@ -94,10 +92,10 @@ public class ItemDAO {
         String wildcarded = "%" + keyword + "%";
 
         //-- set the ? parameters on the PreparedStatement --//
-        pstmt.setString(1, wildcarded);
+        pstmtSearchByKey.setString(1, wildcarded);
 
         //-- execute the PreparedStatement, get a ResultSet back --//
-        ResultSet rs = pstmt.executeQuery();
+        ResultSet rs = pstmtSearchByKey.executeQuery();
 
         //-- iterate through the ResultSet, extracting data from each row and creating an ItemValue from it --//
         //-- add the ItemValue to the Collection via Collection's add method --//
@@ -117,15 +115,15 @@ public class ItemDAO {
         // Use the following releaseDate value in the  prepared statement for setDate
         java.sql.Date releaseDate = new java.sql.Date(item.getReleaseDate().getTime());
         //-- set the ? parameters on the PreparedStatement --//
-        stmt.setString(1, item.getTitle());
-        stmt.setString(2, item.getArtist());
-        stmt.setDate(3, releaseDate);
-        stmt.setBigDecimal(4, item.getListPrice());
-        stmt.setBigDecimal(5, item.getPrice());
-        stmt.setInt(6, 1);
+        pstmtCreate.setString(1, item.getTitle());
+        pstmtCreate.setString(2, item.getArtist());
+        pstmtCreate.setDate(3, releaseDate);
+        pstmtCreate.setBigDecimal(4, item.getListPrice());
+        pstmtCreate.setBigDecimal(5, item.getPrice());
+        pstmtCreate.setInt(6, 1);
 
         //-- execute the PreparedStatement - ignore the update count --//
-        System.out.println(stmt.executeUpdate());
+        System.out.println(pstmtCreate.executeUpdate());
         m_conn.commit();
     }
 
@@ -136,11 +134,11 @@ public class ItemDAO {
         try {
             //// PreparedStatement Lab ////
             //-- close the PreparedStatement for searchByKeyword --//
-            pstmt.close();
+            pstmtSearchByKey.close();
 
             //// Update Lab ////
             //-- close the PreparedStatement for create --//
-            stmt.close();
+            pstmtCreate.close();
         } catch (SQLException sqle) {
             JDBCUtilities.printSQLException(sqle);
         }
