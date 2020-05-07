@@ -55,7 +55,7 @@ public class ItemDAO {
         Statement stmt = null;
 
         //-- build the SQL statement --//
-        String sql = "SELECT * FROM GUEST.ITEM WHERE ITEM_Id = " + id.toString();
+        String sql = "SELECT * FROM GUEST.ITEM WHERE ITEM_ID = " + id.toString();
 
         try {
             //-- initialize the Statement object --//
@@ -80,7 +80,6 @@ public class ItemDAO {
         // return the value object
         return result;
     }
-
 
     //// PreparedStaement Lab ////
     public Collection<MusicItem> searchByKeyword(String keyword)
@@ -127,27 +126,43 @@ public class ItemDAO {
         m_conn.commit();
     }
 
-    public void swap(int idFirst, int idSecond) throws SQLException{
-        PreparedStatement preparedStatement = null;
-        String sql = "UPDATE t1 SET t1.PRICE = t2.PRICE FROM GUEST.ITEM t1 INNER JOIN GUEST.ITEM t2 ON (t2.ID = ? AND t1.ID = ?) OR (t2.ID = ? AND t1.ID = ?)";
-        preparedStatement = m_conn.prepareStatement(sql);
-        preparedStatement.setInt(1, idFirst);
-        preparedStatement.setInt(2, idSecond);
-        preparedStatement.setInt(3, idSecond);
-        preparedStatement.setInt(4,idFirst);
-        preparedStatement.executeUpdate();
+    public void swap(int idFirst, int idSecond) throws SQLException {
+        Statement statement = null;
+        String sql = "UPDATE GUEST.ITEM SET PRICE = CASE" +
+                " WHEN TITLE_ID = " + idFirst + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idSecond + ") " +
+                " WHEN TITLE_ID = " + idSecond + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idFirst + ")";
+
+        statement = m_conn.createStatement();
+        statement.executeUpdate(sql);
         m_conn.commit();
     }
+//     ^^^This part is bitching
+//     Exception in thread "main" java.sql.SQLSyntaxErrorException: Синтаксическая ошибка: Encountered "<EOF>" at line 1, column 179.
+//    	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+//    	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+//    	at org.apache.derby.client.am.Statement.executeUpdate(Unknown Source)
+//    	at com.javatunes.util.ItemDAO.swap(ItemDAO.java:136)
+//    	at com.javatunes.util.ItemDAOMain.main(ItemDAOMain.java:45)
+//    Caused by: org.apache.derby.client.am.SqlException: Синтаксическая ошибка: Encountered "<EOF>" at line 1, column 179.
+//    	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
+//    	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
+//    	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
+//    	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
+//    	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
+//    	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
+//    	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
+//    	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
+//    	at org.apache.derby.client.am.Statement.executeUpdateX(Unknown Source)
 
-    public void showAll() throws SQLException{
+    public void showAll() throws SQLException {
         String sql = "SELECT * FROM GUEST.ITEM";
         Statement stmt = m_conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
-        while(rs.next()){
+        while (rs.next()) {
             System.out.println(new MusicItem(rs.getLong(1), rs.getString(2), rs.getString(3),
                     rs.getDate(4), rs.getBigDecimal(5), rs.getBigDecimal(6)).toString());
         }
-}
+    }
 
     //// PreparedStatement and Update Labs ////
     public void close() {
