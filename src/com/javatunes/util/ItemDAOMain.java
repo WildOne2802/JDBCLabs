@@ -34,6 +34,7 @@ public class ItemDAOMain {
 
         cmi = itemDAO.searchByKeyword("AUSLANDER");
         System.out.println(cmi.toString());
+
         itemDAO.close();
 
     }

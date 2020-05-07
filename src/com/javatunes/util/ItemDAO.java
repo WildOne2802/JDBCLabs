@@ -67,7 +67,7 @@ public class ItemDAO {
             //-- if ID found, extract data from the ResultSet and initialize the ItemValue return value --//
             //-- if ID not found, the return value remains null --//
             rs.next();
-            if (rs.getRow()!=0) {
+            if (rs.getRow() != 0) {
                 result = new MusicItem(rs.getLong(1), rs.getString(2), rs.getString(3),
                         rs.getDate(4), rs.getBigDecimal(5), rs.getBigDecimal(6));
             }
