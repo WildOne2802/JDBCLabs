@@ -17,34 +17,35 @@ public class ItemDAOMain {
 
         ItemDAO itemDAO = new ItemDAO(conn);
 
-        mi = itemDAO.searchById(1L);
-        System.out.println(mi.toString());
+//        mi = itemDAO.searchById(1L);
+//        System.out.println(mi.toString());
+//
+////         mi = itemDAO.searchById(100L);
+////         System.out.println(mi.toString());
+//
+//        Collection<MusicItem> cmi = itemDAO.searchByKeyword("Ray");
+//        System.out.println(cmi.toString());
+//
+//        cmi = itemDAO.searchByKeyword("of");
+//        System.out.println(cmi.toString());
+//
+////        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(119, 9, 2),
+////                BigDecimal.valueOf(140.0), BigDecimal.valueOf(120.0));
+////        itemDAO.create(mi1);
+//
+//        cmi = itemDAO.searchByKeyword("AUSLANDER");
+//        System.out.println(cmi.toString());
+//
+////        String deleteSql = "DELETE FROM GUEST.ITEM WHERE TITLE = \'AUSLANDER\'";
+////        Statement stmt = conn.createStatement();
+////        stmt.executeUpdate(deleteSql);
 
-//         mi = itemDAO.searchById(100L);
-//         System.out.println(mi.toString());
 
-        Collection<MusicItem> cmi = itemDAO.searchByKeyword("Ray");
-        System.out.println(cmi.toString());
+//        itemDAO.showAll();
+//        itemDAO.swap(1,2);
+//        itemDAO.showAll();
+//        itemDAO.close();
 
-        cmi = itemDAO.searchByKeyword("of");
-        System.out.println(cmi.toString());
-
-//        MusicItem mi1 = new MusicItem(1L, "AUSLANDER", "RAMMSTEIN", new Date(119, 9, 2),
-//                BigDecimal.valueOf(140.0), BigDecimal.valueOf(120.0));
-//        itemDAO.create(mi1);
-
-        cmi = itemDAO.searchByKeyword("AUSLANDER");
-        System.out.println(cmi.toString());
-
-//        String deleteSql = "DELETE FROM GUEST.ITEM WHERE TITLE = \'AUSLANDER\'";
-//        Statement stmt = conn.createStatement();
-//        stmt.executeUpdate(deleteSql);
-
-
-        itemDAO.showAll();
-        itemDAO.swap(1,2);
-        itemDAO.showAll();
-        itemDAO.close();
 
     }
 }

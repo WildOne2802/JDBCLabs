@@ -129,8 +129,10 @@ public class ItemDAO {
     public void swap(int idFirst, int idSecond) throws SQLException {
         Statement statement = null;
         String sql = "UPDATE GUEST.ITEM SET PRICE = CASE" +
-                " WHEN TITLE_ID = " + idFirst + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idSecond + ") " +
-                " WHEN TITLE_ID = " + idSecond + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idFirst + ")";
+                " WHEN ITEM_ID = " + idFirst + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idSecond + ")" +
+                " WHEN ITEM_ID = " + idSecond + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idFirst + ")" +
+                " END" +
+                " WHERE ITEM_ID IN (" + idFirst + ","+ idSecond+ ")";
 
         statement = m_conn.createStatement();
         statement.executeUpdate(sql);
