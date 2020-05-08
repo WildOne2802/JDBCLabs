@@ -132,7 +132,7 @@ public class ItemDAO {
                 " WHEN ITEM_ID = " + idFirst + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idSecond + ")" +
                 " WHEN ITEM_ID = " + idSecond + " THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = " + idFirst + ")" +
                 " END" +
-                " WHERE ITEM_ID IN (" + idFirst + ","+ idSecond+ ")";
+                " WHERE ITEM_ID IN (" + idFirst + "," + idSecond + ")";
 
         statement = m_conn.createStatement();
         statement.executeUpdate(sql);
@@ -187,7 +187,14 @@ public class ItemDAO {
 // еще как можно кроме коммита -
 // нужно ли вызывать коммит
 // что такое autocommit
+//
+// Когда мы работает с JDBC, то по умолчанию наше соединение работает в режиме auto-commit,
+// это означает, что каждый SQL – запрос будет выполнен и результаты будут сохранены в таблице нашей базы данных (далее – БД).
+// Для простых приложений это крайне удобно. Но, если мы хотим увеличить производительность,
+// использовать распределённые транзакции, либо интегрировать бизнес-логику,
+// то нам необходимо выключить режим auto-commit для управления нашими транзакциями.
+//
 // update method
 // gets 2 id
 // swap price
-// atom
+// atom +
