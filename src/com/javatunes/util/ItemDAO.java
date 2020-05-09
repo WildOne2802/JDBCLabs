@@ -138,23 +138,6 @@ public class ItemDAO {
         statement.executeUpdate(sql);
         m_conn.commit();
     }
-//     ^^^This part is bitching
-//     Exception in thread "main" java.sql.SQLSyntaxErrorException: Синтаксическая ошибка: Encountered "<EOF>" at line 1, column 179.
-//    	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
-//    	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
-//    	at org.apache.derby.client.am.Statement.executeUpdate(Unknown Source)
-//    	at com.javatunes.util.ItemDAO.swap(ItemDAO.java:136)
-//    	at com.javatunes.util.ItemDAOMain.main(ItemDAOMain.java:45)
-//    Caused by: org.apache.derby.client.am.SqlException: Синтаксическая ошибка: Encountered "<EOF>" at line 1, column 179.
-//    	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
-//    	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
-//    	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
-//    	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
-//    	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
-//    	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
-//    	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
-//    	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
-//    	at org.apache.derby.client.am.Statement.executeUpdateX(Unknown Source)
 
     public void showAll() throws SQLException {
         String sql = "SELECT * FROM GUEST.ITEM";
