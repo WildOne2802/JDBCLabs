@@ -42,9 +42,9 @@ public class ItemDAOMain {
 
 
 //        itemDAO.showAll();
-//        itemDAO.swap(1,2);
-//        itemDAO.showAll();
-//        itemDAO.close();
+        itemDAO.swap(1,2);
+        itemDAO.showAll();
+        itemDAO.close();
 
 
     }

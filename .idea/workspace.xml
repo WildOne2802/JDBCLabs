@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d07d729e-c681-4aea-9300-0f249ec11fbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +38,8 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,13 +62,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="21" />
-          <entry key="java" value="4231" />
+          <entry key="java" value="4385" />
           <entry key="txt" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4225" />
+          <entry key="JAVA" value="4379" />
           <entry key="PLAIN_TEXT" value="182" />
           <entry key="SQL" value="6" />
         </counts>
@@ -78,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3213">
-              <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
+            <state relative-caret-position="459">
+              <caret line="134" column="44" lean-forward="true" selection-start-line="134" selection-start-column="44" selection-end-line="134" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/DBCapabilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="85" column="68" lean-forward="true" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
+            <state relative-caret-position="336">
+              <caret line="85" column="68" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -140,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="574">
+              <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,8 +196,8 @@
         <option value="$PROJECT_DIR$/src/JDBCTest.java" />
         <option value="$PROJECT_DIR$/src/com/javatunes/util/DBCapabilities.java" />
         <option value="$PROJECT_DIR$/src/com/javatunes/util/JDBCUtilities.java" />
-        <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" />
         <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java" />
       </list>
     </option>
   </component>
@@ -217,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,14 +247,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588957767029" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589444768291" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/LabSetup_JDBC/Studentwork/JDBC/ojdbc6.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -323,15 +325,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dbStart" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="JDBC Lab5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\timur\IdeaProjects\JDBCLabs\LabSetup_JDBC\Studentwork\JDBC\Derby" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="dbStart.cmd" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Batch.dbSQL" />
       <item itemvalue="Application.DBCapabilities" />
       <item itemvalue="Application.JDBCTest" />
       <item itemvalue="Application.ItemDAOMain" />
+      <item itemvalue="Batch.dbStart" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ItemDAOMain" />
+        <item itemvalue="Batch.dbStart" />
         <item itemvalue="Application.DBCapabilities" />
         <item itemvalue="Application.JDBCTest" />
         <item itemvalue="Batch.dbSQL" />
@@ -351,6 +366,7 @@
       <workItem from="1588764101234" duration="2429000" />
       <workItem from="1588770707972" duration="32223000" />
       <workItem from="1588960995329" duration="786000" />
+      <workItem from="1589011512170" duration="1504000" />
     </task>
     <task id="LOCAL-00001" summary="ITEMDAO">
       <created>1588791229234</created>
@@ -429,11 +445,18 @@
       <option name="project" value="LOCAL" />
       <updated>1588957564672</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tasks are done">
+      <created>1589011541091</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589011541091</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35438000" />
+    <option name="totallyTimeSpent" value="36942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,8 +469,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16532798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16733602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -525,16 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/MusicItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
@@ -575,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JDBCTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -604,8 +608,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/DBCapabilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="85" column="68" lean-forward="true" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
+        <state relative-caret-position="336">
+          <caret line="85" column="68" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="134" column="44" lean-forward="true" selection-start-line="134" selection-start-column="44" selection-end-line="134" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/javatunes/util/ItemDAOMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
