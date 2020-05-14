@@ -9,6 +9,9 @@
 
 package com.javatunes.util;
 
+import org.apache.derby.client.am.Decimal;
+
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.Collection;
 import java.util.ArrayList;
@@ -127,23 +130,61 @@ public class ItemDAO {
     }
 
     public void swap(int idFirst, int idSecond) throws SQLException {
+
         PreparedStatement statement = null;
-        String sql = "UPDATE GUEST.ITEM SET PRICE = CASE" +
-                " WHEN ITEM_ID = ? THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?)" +
-                " WHEN ITEM_ID = ? THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?)" +
+
+        m_conn.setAutoCommit(false);
+
+        String selectIdFirst = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?";
+        String selectIdSecond = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?";
+        ResultSet rsSelectIdFirst;
+        ResultSet rsSelectIdSecond;
+
+        statement = m_conn.prepareStatement(selectIdFirst);
+        statement.setInt(1, idFirst);
+        rsSelectIdFirst = statement.executeQuery();
+        rsSelectIdFirst.next();
+        BigDecimal a = rsSelectIdFirst.getBigDecimal(1);
+
+        statement = m_conn.prepareStatement(selectIdSecond);
+        statement.setInt(1, idSecond);
+        rsSelectIdSecond = statement.executeQuery();
+        rsSelectIdSecond.next();
+        BigDecimal b = rsSelectIdSecond.getBigDecimal(1);
+
+        String finalSql = "UPDATE GUEST.ITEM SET PRICE = CASE" +
+                " WHEN ITEM_ID = ? THEN " + b +
+                " WHEN ITEM_ID = ? THEN " + a +
                 " END" +
                 " WHERE ITEM_ID IN (? , ?)";
 
-        statement = m_conn.prepareStatement(sql);
-
+        statement = m_conn.prepareStatement(finalSql);
         statement.setInt(1, idFirst);
         statement.setInt(2, idSecond);
-        statement.setInt(3, idSecond);
-        statement.setInt(4, idFirst);
-        statement.setInt(5, idFirst);
-        statement.setInt(6, idSecond);
+        statement.setInt(3, idFirst);
+        statement.setInt(4, idSecond);
         statement.executeUpdate();
+
         m_conn.commit();
+        m_conn.setAutoCommit(true);
+
+
+//        String sql = "UPDATE GUEST.ITEM SET PRICE = CASE" +
+//                " WHEN ITEM_ID = ? THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?)" +
+//                " WHEN ITEM_ID = ? THEN (SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?)" +
+//                " END" +
+//                " WHERE ITEM_ID IN (? , ?)";
+//
+//        statement = m_conn.prepareStatement(sql);
+//
+//        statement.setInt(1, idFirst);
+//        statement.setInt(2, idSecond);
+//        statement.setInt(3, idSecond);
+//        statement.setInt(4, idFirst);
+//        statement.setInt(5, idFirst);
+//        statement.setInt(6, idSecond);
+//        statement.executeUpdate();
+//        m_conn.commit();
     }
 
     public void showAll() throws SQLException {
@@ -188,3 +229,11 @@ public class ItemDAO {
 // gets 2 id
 // swap price
 // atom +
+//
+// Если вы хотите выполнить несколько операторов атомарно, вам нужно использовать транзакцию.
+// Соединение JDBC по умолчанию использует режим "auto-commit", что означает, что каждый оператор выполняется в своей транзакции.
+// Поэтому сначала нужно отключить режим автоматической фиксации, используя Connection.setAutoCommit(false).
+//
+// При отключенном режиме автоматической фиксации исполняемые операторы будут выполняться в текущей транзакции,
+// если нет текущей транзакции, она будет запущена. Затем эта транзакция может быть выполнена с использованием
+// Connection.commit() или откат с помощью Connection.rollback().
