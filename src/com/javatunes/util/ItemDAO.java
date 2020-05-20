@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.sql.*;
 import java.util.Collection;
 import java.util.ArrayList;
+import java.util.List;
 
 import static java.sql.Connection.TRANSACTION_SERIALIZABLE;
 
@@ -131,6 +132,8 @@ public class ItemDAO {
         m_conn.commit();
     }
 
+    static List<Integer> inProgress = new ArrayList<>();
+
     public void swap(int idFirst, int idSecond) throws SQLException {
 
         PreparedStatement statement = null;
@@ -138,9 +141,24 @@ public class ItemDAO {
         m_conn.setAutoCommit(false);
 
         m_conn.setTransactionIsolation(TRANSACTION_SERIALIZABLE);
+//        String lock = "lock table GUEST.ITEM in exclusive mode";
+//        statement.execute(lock);
 
-        String selectIdFirst = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?";
-        String selectIdSecond = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ?";
+        if (inProgress.contains(idFirst) && inProgress.contains(idSecond)) {
+            for (int i = 0; i < 20; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        inProgress.add(idFirst);
+        inProgress.add(idSecond);
+
+        String selectIdFirst = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ? FOR UPDATE";
+        String selectIdSecond = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ? FOR UPDATE";
         ResultSet rsSelectIdFirst;
         ResultSet rsSelectIdSecond;
 
@@ -168,6 +186,9 @@ public class ItemDAO {
         statement.setInt(3, idFirst);
         statement.setInt(4, idSecond);
         statement.executeUpdate();
+
+        inProgress.remove((Object) idFirst);
+        inProgress.remove((Object) idSecond);
 
         m_conn.commit();
         m_conn.setAutoCommit(true);
@@ -255,3 +276,4 @@ public class ItemDAO {
 // Это самый строгий уровень изоляции, поскольку он блокирует целые диапазоны ключей и сохраняет блокировку
 // до завершения транзакции. Из-за низкого параллелизма этот параметр рекомендуется использовать только при необходимости.
 // Этот параметр действует так же, как и настройка HOLDLOCK всех таблиц во всех инструкциях SELECT в транзакции.
+//

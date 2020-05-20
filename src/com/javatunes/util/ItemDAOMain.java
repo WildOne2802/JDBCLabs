@@ -16,6 +16,7 @@ public class ItemDAOMain {
         conn = DriverManager.getConnection("jdbc:derby://localhost:1527/JavaTunesDB");
 
         ItemDAO itemDAO = new ItemDAO(conn);
+        ItemDAO itemDAO1 = new ItemDAO(conn);
 
 //        mi = itemDAO.searchById(1L);
 //        System.out.println(mi.toString());
@@ -40,12 +41,15 @@ public class ItemDAOMain {
 ////        Statement stmt = conn.createStatement();
 ////        stmt.executeUpdate(deleteSql);
 
-
-//        itemDAO.showAll();
-        itemDAO.swap(1,2);
+        ItemDAOThread thread1 = new ItemDAOThread(itemDAO,1,2);
+        ItemDAOThread thread2 = new ItemDAOThread(itemDAO1, 2,1);
+        thread1.start();
         itemDAO.showAll();
+        System.out.println("===================================================================================");
+        thread2.start();
+        itemDAO1.showAll();
+
         itemDAO.close();
-
-
+        itemDAO1.close();
     }
 }
