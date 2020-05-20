@@ -132,7 +132,7 @@ public class ItemDAO {
         m_conn.commit();
     }
 
-    static List<Integer> inProgress = new ArrayList<>();
+//    static List<Integer> inProgress = new ArrayList<>();
 
     public void swap(int idFirst, int idSecond) throws SQLException {
 
@@ -144,18 +144,26 @@ public class ItemDAO {
 //        String lock = "lock table GUEST.ITEM in exclusive mode";
 //        statement.execute(lock);
 
-        if (inProgress.contains(idFirst) && inProgress.contains(idSecond)) {
-            for (int i = 0; i < 20; i++) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+//        if (inProgress.contains(idFirst) && inProgress.contains(idSecond)) {
+//            for (int i = 0; i < 20; i++) {
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//
+//        inProgress.add(idFirst);
+//        inProgress.add(idSecond);
 
-        inProgress.add(idFirst);
-        inProgress.add(idSecond);
+
+        int tmp;
+        if (idFirst > idSecond) {
+            tmp = idFirst;
+            idFirst = idSecond;
+            idSecond = tmp;
+        }
 
         String selectIdFirst = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ? FOR UPDATE";
         String selectIdSecond = "SELECT PRICE FROM GUEST.ITEM WHERE ITEM_ID = ? FOR UPDATE";
@@ -187,8 +195,8 @@ public class ItemDAO {
         statement.setInt(4, idSecond);
         statement.executeUpdate();
 
-        inProgress.remove((Object) idFirst);
-        inProgress.remove((Object) idSecond);
+//        inProgress.remove((Object) idFirst);
+//        inProgress.remove((Object) idSecond);
 
         m_conn.commit();
         m_conn.setAutoCommit(true);
